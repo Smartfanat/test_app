@@ -21,7 +21,6 @@ public:
     Q_INVOKABLE void login(QString userName, QString password);
     Q_INVOKABLE void logout();
     Q_INVOKABLE void getProjects();
-    Q_INVOKABLE void add();
     Q_INVOKABLE void updateValue(int projectId, QString name, bool active, bool watcher);
 
     Q_INVOKABLE ProjectModel* model();
@@ -34,7 +33,6 @@ signals:
 
 private slots:
     void setLogged(bool logged);
-    void replyFinished(QNetworkReply *reply);
 
 private:
     ProjectModel *m_model;

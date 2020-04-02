@@ -11,26 +11,6 @@ static QString convertSecondsToHHMMSSFormat(int duration)
 ProjectModel::ProjectModel(QObject *obj)
     : QAbstractListModel(obj)
 {
-
-//    Project *newProject1 = new Project;
-//    newProject1->setId(10);
-//    newProject1->setName("Project1");
-//    newProject1->setPosition(1);
-//    newProject1->setActive(true);
-//    newProject1->setStarred(true);
-//    m_list.push_back(newProject1);
-//    Project *newProject2 = new Project;
-//    newProject2->setPosition(2);
-//    newProject2->setId(11);
-//    newProject2->setName("Project2");
-//    m_list.push_back(newProject2);
-//    newProject2->setActive(true);
-//    newProject2->setLogoUrl("https://data.whicdn.com/images/334374622/original.jpg");
-//    Project *newProject3 = new Project;
-//    newProject3->setPosition(3);
-//    newProject3->setId(12);
-//    newProject3->setName("Project3");
-//    m_list.push_back(newProject3);
 }
 
 void ProjectModel::add(Project *newProject)

@@ -85,7 +85,7 @@ Rectangle {
             Rectangle {
                 RoundImage {
                     anchors.fill: parent
-                    source: logoUrl// "https://data.whicdn.com/images/334374622/original.jpg"
+                    source: logoUrl
                 }
             }
 

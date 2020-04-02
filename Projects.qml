@@ -39,7 +39,6 @@ Rectangle {
                     text: qsTr("LOGOUT")
                     onClicked: {
                         controller.logout()
-                        console.log("LOOOOOOOOOOOOOO")
                         loader.setSource("LoginPage.qml")
                     }
                 }
@@ -98,7 +97,6 @@ Rectangle {
                 Text {
                     color: model.active? "green" : "red"
                     text: model.active? qsTr("Active") : qsTr("Inactive")
-//                    Layout.right: spacer.left
                 }
 
                 Item { id: spacer; Layout.minimumWidth: 10 }
@@ -132,10 +130,6 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    console.log("ID: " + model.id)
-                    console.log("logoUrl: " + model.logoUrl)
-                    console.log("active: " + model.active)
-                    console.log("watcher: " + model.watcher)
                     loader.setSource("EditPage.qml")
                     loader.item.id = model.id
                     loader.item.projectName = model.name

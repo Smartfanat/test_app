@@ -21,7 +21,6 @@ public:
 
     QHash<int, QByteArray> roleNames() const;
 
-
 private:
     std::vector<Project*> m_list;
 };

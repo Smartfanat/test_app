@@ -1,4 +1,3 @@
-#include <QDebug>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QAbstractSocket>
@@ -18,12 +17,6 @@ Controller::Controller(QObject *obj)
 {
     m_manager = new QNetworkAccessManager(this);
     m_model = new ProjectModel(this);
-    //    auto project = new Project;
-    //    project->setName("FF");
-    //    m_list.append(project);
-    //    project->setName("FF2");
-    //    m_list.append(project);
-
 }
 
 void Controller::login(QString userName, QString password)
@@ -45,13 +38,12 @@ void Controller::login(QString userName, QString password)
 
     auto reply = m_manager->post(request, jsonString);
 
-    connect(reply, &QNetworkReply::finished, [this, reply]() // <-- lamda as slot
+    connect(reply, &QNetworkReply::finished, [this, reply]()
     {
         QJsonDocument jsonResponse = QJsonDocument::fromJson(reply->readAll());
         QJsonObject jsonObject = jsonResponse.object();
         m_token = jsonObject["token"].toString();
         m_logged = true;
-        qDebug() << "Token: " << m_token;
         emit loggedChanged();
         reply->deleteLater();
     });
@@ -68,7 +60,6 @@ void Controller::logout()
     {
         if (reply->error() == QNetworkReply::NetworkError::NoError)
         {
-            qDebug() << "Logged out";
             m_logged = false;
             emit loggedChanged();
         }
@@ -118,12 +109,6 @@ void Controller::getProjects()
     });
 }
 
-void Controller::add()
-{
-    //    m_projectModel->add();
-    emit modelUpdated();
-}
-
 void Controller::updateValue(int projectId, QString name, bool active, bool watcher)
 {
     if (m_token.isEmpty())
@@ -132,7 +117,6 @@ void Controller::updateValue(int projectId, QString name, bool active, bool watc
         return;
     }
 
-    qDebug() << "value: " << name << " " << active << " " << watcher;
     m_model->updateValue(projectId, name, active, watcher);
 
 
@@ -162,19 +146,11 @@ void Controller::updateValue(int projectId, QString name, bool active, bool watc
 
     connect(reply, &QNetworkReply::finished, [this, reply]()
     {
-        qDebug() << "Answer 1: " << reply->readAll();
         emit modelUpdated();
         reply->deleteLater();
     });
 
 }
-
-//void Controller::update()
-//{
-//    https://api.quwi.com/v2/projects-manage/666
-//}
-
-
 
 ProjectModel* Controller::model()
 {
@@ -188,12 +164,6 @@ bool Controller::logged() const
 
 void Controller::setLogged(bool logged)
 {
-    qDebug() << "Set logged" << logged;
     m_logged = logged;
     emit loggedChanged();
-}
-
-void Controller::replyFinished(QNetworkReply *reply)
-{
-    qDebug() << "Answer 2: " << reply->readAll();
 }

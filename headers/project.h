@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QObject>
-#include <QDebug>
 
 struct Project : public QObject
 {

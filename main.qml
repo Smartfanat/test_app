@@ -22,7 +22,6 @@ Window {
         anchors.fill: parent
 
         Component.onCompleted:  {
-            console.log("Completed")
             setSource("LoginPage.qml")
         }
     }

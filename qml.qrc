@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>LoginPage.qml</file>
+        <file>Projects.qml</file>
+        <file>EditPage.qml</file>
+        <file>Switcher.qml</file>
+        <file>RoundImage.qml</file>
+    </qresource>
+</RCC>

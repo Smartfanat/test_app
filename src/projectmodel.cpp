@@ -1,5 +1,4 @@
 #include "headers/projectmodel.h"
-#include "headers/projectroleenum.h"
 
 namespace  {
 static QString convertSecondsToHHMMSSFormat(int duration)
@@ -41,15 +40,15 @@ QVariant ProjectModel::data(const QModelIndex &index, int role) const
 
     switch(role)
     {
-    case ProjectRole::Role::Id: return QVariant(m_list[static_cast<size_t>(index.row())]->id());
-    case ProjectRole::Role::Name: return QVariant(m_list[static_cast<size_t>(index.row())]->name());
-    case ProjectRole::Role::Active: return QVariant(m_list[static_cast<size_t>(index.row())]->active());
-    case ProjectRole::Role::Logo: return QVariant(m_list[static_cast<size_t>(index.row())]->logoUrl());
-    case ProjectRole::Role::Position: return QVariant(m_list[static_cast<size_t>(index.row())]->position());
-    case ProjectRole::Role::Watcher: return QVariant(m_list[static_cast<size_t>(index.row())]->watcher());
-    case ProjectRole::Role::SpendTimeWeek: return QVariant(convertSecondsToHHMMSSFormat(m_list[static_cast<size_t>(index.row())]->spendTimeWeek()));
-    case ProjectRole::Role::SpendTimeMonth: return QVariant(convertSecondsToHHMMSSFormat(m_list[static_cast<size_t>(index.row())]->spendTimeMonth()));
-    case ProjectRole::Role::SpendTimeAll: return QVariant(convertSecondsToHHMMSSFormat(m_list[static_cast<size_t>(index.row())]->spendTimeMonth()));
+    case Role::Id: return QVariant(m_list[static_cast<size_t>(index.row())]->id());
+    case Role::Name: return QVariant(m_list[static_cast<size_t>(index.row())]->name());
+    case Role::Active: return QVariant(m_list[static_cast<size_t>(index.row())]->active());
+    case Role::Logo: return QVariant(m_list[static_cast<size_t>(index.row())]->logoUrl());
+    case Role::Position: return QVariant(m_list[static_cast<size_t>(index.row())]->position());
+    case Role::Watcher: return QVariant(m_list[static_cast<size_t>(index.row())]->watcher());
+    case Role::SpendTimeWeek: return QVariant(convertSecondsToHHMMSSFormat(m_list[static_cast<size_t>(index.row())]->spendTimeWeek()));
+    case Role::SpendTimeMonth: return QVariant(convertSecondsToHHMMSSFormat(m_list[static_cast<size_t>(index.row())]->spendTimeMonth()));
+    case Role::SpendTimeAll: return QVariant(convertSecondsToHHMMSSFormat(m_list[static_cast<size_t>(index.row())]->spendTimeMonth()));
     }
 
     return QVariant();
@@ -70,15 +69,15 @@ void ProjectModel::updateValue(int projectId, QString name, bool active, bool wa
 
 QHash<int, QByteArray> ProjectModel::roleNames() const {
     QHash<int, QByteArray> roles;
-    roles[ProjectRole::Role::Id] = "id";
-    roles[ProjectRole::Role::Name] = "name";
-    roles[ProjectRole::Role::Active] = "active";
-    roles[ProjectRole::Role::Logo] = "logoUrl";
-    roles[ProjectRole::Role::Position] = "position";
-    roles[ProjectRole::Role::Watcher] = "watcher";
-    roles[ProjectRole::Role::SpendTimeWeek] = "spendTimeWeek";
-    roles[ProjectRole::Role::SpendTimeMonth] = "spendTimeMonth";
-    roles[ProjectRole::Role::SpendTimeAll] = "spendTimeAll";
+    roles[Role::Id] = "id";
+    roles[Role::Name] = "name";
+    roles[Role::Active] = "active";
+    roles[Role::Logo] = "logoUrl";
+    roles[Role::Position] = "position";
+    roles[Role::Watcher] = "watcher";
+    roles[Role::SpendTimeWeek] = "spendTimeWeek";
+    roles[Role::SpendTimeMonth] = "spendTimeMonth";
+    roles[Role::SpendTimeAll] = "spendTimeAll";
 
     return roles;
 }

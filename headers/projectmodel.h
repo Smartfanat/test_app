@@ -7,6 +7,18 @@ class ProjectModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
+    enum Role{
+        Id = Qt::UserRole+1,
+        Active,
+        Name,
+        Logo,
+        Position,
+        Watcher,
+        SpendTimeWeek,
+        SpendTimeMonth,
+        SpendTimeAll
+    };
+
     ProjectModel(QObject *obj = nullptr);
 
     void add(Project *newProject);

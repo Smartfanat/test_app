@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
-SET(headers headers/projectroleenum.h headers/project.h headers/projectmodel.h headers/controller.h)
+SET(headers headers/project.h headers/projectmodel.h headers/controller.h)
 SET(sources src/controller.cpp src/projectmodel.cpp src/main.cpp)
 
 add_executable(${PROJECT_NAME} ${headers} ${sources}     "qml.qrc")

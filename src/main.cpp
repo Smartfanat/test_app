@@ -6,8 +6,6 @@
 #include "headers/controller.h"
 #include "headers/projectmodel.h"
 
-#include "headers/projectroleenum.h"
-
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -17,8 +15,6 @@ int main(int argc, char *argv[])
     Controller controller;
 
     qRegisterMetaType<ProjectModel*>();
-
-    qmlRegisterType<ProjectRole>("ProjectRoles", 1, 0, "Role");
 
     qmlRegisterType<Controller>("APIController", 1, 0, "Controller");
 

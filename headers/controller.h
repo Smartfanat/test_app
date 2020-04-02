@@ -3,7 +3,6 @@
 #include <QObject>
 #include "project.h"
 #include "projectmodel.h"
-#include "projectroleenum.h"
 
 class QNetworkAccessManager;
 class QNetworkReply;

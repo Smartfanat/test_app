@@ -5,9 +5,6 @@ import QtQuick.Controls 2.5
 Rectangle {
     id: projectsPage
 
-    width: 1240
-    height: 960
-
     color: "#F4F4F4"
 
     Rectangle {

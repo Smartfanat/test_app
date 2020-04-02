@@ -85,7 +85,8 @@ Rectangle {
                 }
 
                 Text {
-                    text: model.name
+                    text: qsTr(model.name).substring(0, 11)
+
                     Layout.minimumWidth: parent.width*0.2
                 }
 

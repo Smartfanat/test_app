@@ -6,49 +6,55 @@ Rectangle {
     id: root
 
     anchors.centerIn: parent
-    height: parent.height*0.5
 
     color: "#F4F4F4"
 
-    ColumnLayout
-    {
-        anchors.fill: parent
-        anchors.leftMargin: root.width*0.35
+    Rectangle {
+        anchors.centerIn: parent
+        width: parent.width/3
+        height: parent.height/2
+        color: parent.color
 
-        spacing: 2
+        ColumnLayout
+        {
+            anchors.fill: parent
 
-        Label {
-            text: qsTr("LOGIN")
-            font.bold: true
-        }
 
-        TextField {
-            id: emailField
-            placeholderText: qsTr("Email")
-        }
+            spacing: 2
 
-        TextField {
-            id: passwordField
-            echoMode: TextInput.Password
-            placeholderText: qsTr("Password")
-        }
-
-        Button {
-            Layout.minimumWidth: passwordField.width*0.5
-            Layout.minimumHeight: passwordField.height
-            Text {
-                anchors.centerIn: parent
+            Label {
                 text: qsTr("LOGIN")
-                color: "white"
+                font.bold: true
             }
 
-            background: Rectangle {
-                radius: 5
-                color: "#0f488c"
+            TextField {
+                id: emailField
+                placeholderText: qsTr("Email")
             }
 
-            onClicked: {
-                controller.login(emailField.text, passwordField.text)
+            TextField {
+                id: passwordField
+                echoMode: TextInput.Password
+                placeholderText: qsTr("Password")
+            }
+
+            Button {
+                Layout.minimumWidth: passwordField.width*0.5
+                Layout.minimumHeight: passwordField.height
+                Text {
+                    anchors.centerIn: parent
+                    text: qsTr("LOGIN")
+                    color: "white"
+                }
+
+                background: Rectangle {
+                    radius: 5
+                    color: "#0f488c"
+                }
+
+                onClicked: {
+                    controller.login(emailField.text, passwordField.text)
+                }
             }
         }
     }

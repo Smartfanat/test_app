@@ -8,6 +8,7 @@
 #include <QJsonArray>
 
 #include "headers/controller.h"
+#include "headers/project.h"
 #include "headers/projectmodel.h"
 
 const QString QUWI_URL = "https://api.quwi.com/v2";

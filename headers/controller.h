@@ -1,9 +1,9 @@
 #pragma once
 
 #include <QObject>
-#include "project.h"
-#include "projectmodel.h"
 
+class Project;
+class ProjectModel;
 class QNetworkAccessManager;
 class QNetworkReply;
 

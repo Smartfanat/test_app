@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QAbstractListModel>
-#include "project.h"
+class Project;
 
 class ProjectModel : public QAbstractListModel
 {

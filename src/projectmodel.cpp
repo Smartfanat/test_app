@@ -1,3 +1,4 @@
+#include "headers/project.h"
 #include "headers/projectmodel.h"
 
 namespace  {

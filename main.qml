@@ -1,15 +1,15 @@
 import QtQuick 2.12
-import QtQuick.Window 2.12
+import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 
 import APIController 1.0
 
-Window {
+ApplicationWindow {
     id: root
 
     visible: true
 
-    width: windowWidth/3
+    width: windowWidth/3.5
     height: windowHeight/2
 
     title: qsTr("Quwi")
@@ -22,6 +22,8 @@ Window {
         anchors.fill: parent
 
         Component.onCompleted:  {
+            root.minimumWidth = windowWidth/3.5
+            root.minimumHeight = windowHeight/2
             setSource("LoginPage.qml")
         }
     }
@@ -36,15 +38,15 @@ Window {
             if (controller.logged)
             {
                 loader.setSource("Projects.qml")
-                root.width = windowWidth/2
-                root.height= windowHeight/1.5
+                root.width = root.minimumWidth = windowWidth/2
+                root.height = root.minimumHeight= windowHeight/1.5
                 controller.getProjects()
             }
             else
             {
                 loader.setSource("LoginPage.qml")
-                root.width = windowWidth/3
-                root.height= windowHeight/2
+                root.width = root.minimumWidth = windowWidth/3.5
+                root.height= root.minimumHeight = windowHeight/2
             }
         }
     }

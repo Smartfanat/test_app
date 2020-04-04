@@ -108,13 +108,13 @@ Rectangle {
                         text: qsTr("time this week");
                     }
                     Label {
-                        text: qsTr("00:00:00");
+                        text: model.spendTimeWeek;
                     }
                     Label {
                         text: qsTr("this month");
                     }
                     Label {
-                        text: qsTr("00:00:00");
+                        text: model.spendTimeMonth;
                     }
                     Label {
                         text: qsTr("total");

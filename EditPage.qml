@@ -12,9 +12,6 @@ Rectangle {
     property bool  isWatcher: false
     property int id: 0
 
-    width: 1240
-    height: 960
-
     color: "#F4F4F4"
 
     Rectangle {
@@ -62,7 +59,7 @@ Rectangle {
         color: "white"
         GridLayout {
             anchors.fill: parent
-            rows: 4
+            rows: 3
             columns: 5
             anchors.margins: parent.height*0.02
 
@@ -79,12 +76,6 @@ Rectangle {
                         controller.updateValue(id, textField.text, activeSwitcher.checked, wacherSwitcher.checked)
                         active = checked
                     }
-                }
-            }
-            Rectangle {
-                RoundImage {
-                    anchors.fill: parent
-                    source: logoUrl
                 }
             }
 

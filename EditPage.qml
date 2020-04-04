@@ -59,7 +59,7 @@ Rectangle {
         color: "white"
         GridLayout {
             anchors.fill: parent
-            rows: 3
+            rows: 4
             columns: 5
             anchors.margins: parent.height*0.02
 

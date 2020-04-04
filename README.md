@@ -1,5 +1,5 @@
 # Test App
 
-# C++/QML
+C++/QML
 
-# Windows installator https://drive.google.com/open?id=1DI6zW18btztrmLwMydOL4aksg8gxGxGo
+Windows installator https://drive.google.com/open?id=1DI6zW18btztrmLwMydOL4aksg8gxGxGo
